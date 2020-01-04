@@ -1,0 +1,42 @@
+.main_chat
+  .group--info
+    .left--info
+      %h.title
+        test
+      %ul.member
+        Member : nnnnn
+    .right-edit
+      =link_to "#", class: "edit--btns" do
+        Edit
+  .message--list
+    %ul.name--date
+      %li.list--name
+        sho
+      %li.list--date
+        2980/12/12
+    %p.message--content
+      ぼくドラえもん
+    %ul.name--date
+      %li.list--name
+        GTO
+      %li.list--date
+        2080/12/12
+    %p.message--content
+      ぼくpokeもん
+    %ul.name--date
+      %li.list--name
+        FGO
+      %li.list--date
+        5555/55/55
+    %p.message--content
+      5555555
+  .message--form
+    .text-img
+      %input{class: "input-text",placeholder:"type a message"}
+        %label{class: "input-image"}
+          = icon('fas', 'image')
+          %input{type: "file",class: "input-image-file"}
+      .message--buttons
+        %input{type:"submit",class:"message--button",value:"Send"}
+        
+
