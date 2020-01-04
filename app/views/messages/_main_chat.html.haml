@@ -1,14 +1,14 @@
-.main_chat
-  .group--info
-    .left--info
-      %h.title
+.main
+  .main__info
+    .main__info--left
+      .main__info--left--title
         test
-      %ul.member
+      .main__info--left--member
         Member : nnnnn
-    .right-edit
+    .main__info--right
       =link_to "#", class: "edit--btns" do
         Edit
-  .message--list
+  .main__list
     %ul.name--date
       %li.list--name
         sho
@@ -25,13 +25,14 @@
       ぼくpokeもん
     %ul.name--date
       %li.list--name
-        FGO
+        FGD
       %li.list--date
         5555/55/55
     %p.message--content
       5555555
-  .message--form
-    .text-img
+
+  .main__form
+    .main__form--img
       %input{class: "input-text",placeholder:"type a message"}
         %label{class: "input-image"}
           = icon('fas', 'image')
