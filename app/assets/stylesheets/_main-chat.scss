@@ -1,0 +1,100 @@
+.main{
+  &__info{
+    display: flex;
+    height:100px;
+    width:calc(100vw - 300px);
+    background-color: $base-color2;
+    &--left{
+      padding-left:40px;
+      padding-top:35px;
+      &--title{
+        color: #333333;
+        font-size: 20px;
+      }
+      &--member{
+        color:$base-color4;
+        font-size: 12px;
+        padding-top:15px;
+      }
+    }
+    &--right{
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px $base-color3;
+      position: absolute;
+      right: 40px;
+      a{
+        color:$base-color3;
+        text-decoration: none;
+      }
+    }
+  }
+  &__list{
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll;
+  }
+    .name--date{
+      display: flex;
+    .list--name{
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .list--date{
+      font-size: 12px;
+      color:$base-color4;
+      margin-left: 10px;
+    }
+    }
+    .message--content{
+      font-size:14px;
+      color:#434A54;
+      margin-bottom: 46px;
+    }
+    
+  
+  &__form{
+    height: 90px;
+    padding: 20px 40px;
+    background-color: #ddd;
+
+    &--img{
+      display: flex;
+      position: relative;
+
+      .input-text{
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+      }
+      .input-image{
+        position: absolute;
+        top: 12px;
+        right: 125px;
+        cursor: pointer;
+
+        .input-image-file{
+          display: none;
+        }
+      }
+    }
+  }
+      
+    .message--button{
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: $base-color3;
+      color: white;
+      cursor: pointer;
+    }
+}
+  
