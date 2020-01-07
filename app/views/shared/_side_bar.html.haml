@@ -1,0 +1,39 @@
+.side
+  .side__name
+    .side__name--items
+      .side__name--items--name
+        = current_user.name
+      %ul.icons
+        %li
+          = link_to new_group_path do
+            = icon('fas','edit')
+        %li
+          = link_to edit_user_path(current_user) do
+            = icon('fas','cog')
+  .side__list
+    - current_user.groups.each do |group|
+      .side__list--groups
+        = link_to '#' do
+          %p.group
+            = group.name
+          %p.message
+            メッセージはまだありません。
+            
+-# .side
+-#   .side__name
+-#     .side__name--items
+-#       .side__name--items--name
+-#         = current_user.name
+-#       %ul.icons
+-#         %li
+-#           = link_to new_group_path do
+-#             = icon('fas','edit')
+-#         %li
+-#           = link_to edit_user_path(current_user) do
+-#             = icon('fas','cog')
+-#   .side__list
+-#     .side__list--groups
+-#       %p.group
+-#         sho
+-#       %p.message
+-#         まだメッセージがありません
