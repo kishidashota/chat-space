@@ -2,40 +2,77 @@
   .main__info
     .main__info--left
       .main__info--left--title
-        test
+        = @group.name
       .main__info--left--member
-        Member : nnnnn
+        Member:
+        = current_user.name
+          
+        
     .main__info--right
-      =link_to "#", class: "edit--btns" do
+      =link_to edit_group_path(@group),class: "edit--btns" do
         Edit
-  .main__list
-    %ul.name--date
-      %li.list--name
-        sho
-      %li.list--date
-        2980/12/12
-    %p.message--content
-      ぼくドラえもん
-    %ul.name--date
-      %li.list--name
-        GTO
-      %li.list--date
-        2080/12/12
-    %p.message--content
-      ぼくpokeもん
-    %ul.name--date
-      %li.list--name
-        FGD
-      %li.list--date
-        5555/55/55
-    %p.message--content
-      5555555
 
-  .main__form
-    .main__form--img
-      %input{class: "input-text",placeholder:"type a message"}
-        %label{class: "input-image"}
-          = icon('fas', 'image')
-          %input{type: "file",class: "input-image-file"}
-      .message--buttons
-        %input{type:"submit",class:"message--button",value:"Send"}
+
+  .main__list
+    = render @messages
+  
+
+  = form_for [@group, @message] do |f|
+    .main__form
+      .main__form--img
+        = f.text_field :body, class: 'input-text', placeholder: 'type a message'
+        .input-image
+          = f.label :image, class: 'input-image-file' do
+            = icon('fas', 'image')
+            = f.file_field :image, class:'input-image-file-icon'
+        = f.submit 'Send',class:'message--button'
+
+
+
+  -# .input-image
+  -#   .main__form
+  -#     .main__form--img
+  -#       %input{class: "input-text",placeholder:"type a message"}
+  -#         %label{class: "input-image"}
+  -#           = icon('fas', 'image')
+  -#           %input{type: "file",class: "input-image-file"}
+  -#       .message--button
+  -#         %input{type:"submit",class:"message--button",value:"Send"}
+  
+
+
+
+
+
+-# .main__list
+-#     %ul.name--date
+-#       %li.list--name
+-#         sho
+-#       %li.list--date
+-#         2980/12/12
+-#     %p.message--content
+-#       ぼくドラえもん
+-#     %ul.name--date
+-#       %li.list--name
+-#         GTO
+-#       %li.list--date
+-#         2080/12/12
+-#     %p.message--content
+-#       ぼくpokeもん
+-#     %ul.name--date
+-#       %li.list--name
+-#         FGD
+-#       %li.list--date
+-#         5555/55/55
+-#     %p.message--content
+-#       5555555
+
+-# .main_form
+-#   .main_form--img
+-#     = form_for [@group, @message] do |f|
+-#       = f.text_field :body, class: 'input-text', placeholder: 'type a message'
+-#       .input-image
+-#         = f.label :image, class: 'input-image-file' do
+-#           = icon('fas', 'image')
+-#           = f.file_field :image
+-#       = f.submit 'Send', class: 'form__submit'
