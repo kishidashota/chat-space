@@ -59,7 +59,6 @@ $(function(){
       var html = buildHTML(data);
        $('.main__list').append(html);      
        $('form')[0].reset();
-       console.log(data);
        $('.main__list').animate({ scrollTop: $('.main__list')[0].scrollHeight});//メッセージ画面全体にかかっているクラス名を$()に入れる
     })
     .fail(function(){
