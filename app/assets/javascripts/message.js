@@ -44,22 +44,22 @@ $(function(){
     var formData = new FormData(this);
     var url = $(this).attr('action');
 
-    $('.message--button').removeAttr('data-disable-with')   //連続で送信ボタンを押せるように
+    $('.message--button').removeAttr('data-disable-with')   
 
 
     $.ajax({
-      url: url,  //同期通信でいう『パス』
-      type: "POST",  //同期通信でいう『HTTPメソッド』
+      url: url, 
+      type: "POST",  
       data: formData,  
       dataType: 'json',
       processData: false,
       contentType: false
     })
-    .done(function(data){ //同じ変数を定義してあげる
+    .done(function(data){ 
       var html = buildHTML(data);
        $('.main__list').append(html);      
        $('form')[0].reset();
-       $('.main__list').animate({ scrollTop: $('.main__list')[0].scrollHeight});//メッセージ画面全体にかかっているクラス名を$()に入れる
+       $('.main__list').animate({ scrollTop: $('.main__list')[0].scrollHeight});
     })
     .fail(function(){
       alert('メッセージ送信に失敗しました');
