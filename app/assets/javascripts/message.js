@@ -44,7 +44,6 @@ $(function(){
     })
 
     .done(function(data){ 
-      console.log(data)
       var html = buildHTML(data);
        $('.main__list').append(html);      
        $('form')[0].reset();
@@ -82,7 +81,7 @@ $(function(){
     })
   
     .fail(function() {
-      console.log('error');
+      alert('更新に失敗しました');
     })
   };
     if (document.location.href.match(/\/groups\/\d+\/messages/)) {
